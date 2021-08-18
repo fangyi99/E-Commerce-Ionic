@@ -1,0 +1,48 @@
+.container {
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+}
+
+.header {
+    vertical-align: middle;
+    margin: 5%;
+}
+
+.close {
+    position: relative;
+    right: 0;
+    top: 0;
+}
+
+img,
+.price {
+    display: inline-block;
+}
+
+img {
+    width: 40%;
+}
+
+.content {
+    margin: 5%;
+}
+
+ion-row {
+    margin-top: 5%;
+}
+
+.add {
+    width: 100%;
+}
+
+.quantity {
+    margin-top: 5%;
+    display: inline-flex;
+}
+
+ion-input {
+    width: 80px;
+    text-align: center;
+}

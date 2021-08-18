@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-searchbar placeholder="Search for a product..." [(ngModel)]="searchInput" ionClear="clearInput()"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content overflow-scroll="true">
+    <div class=container>
+        <ion-card *ngFor="let product of products | filter:searchInput" [routerLink]="['/product',product.id]">
+            <img src="{{product.image}}">
+            <ion-card-content>
+                <p>{{product.name}}</p>
+                <p>${{product.price}}</p>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button [routerLink]="['']">
+                <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <div class="logo2">
+            <img src="assets/images/logo.JPG">
+        </div>
+        <ion-title>Sign Up</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="logo">
+        <img src="assets/images/logo.JPG" />
+    </div>
+    <form [formGroup]="registerForm">
+        <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <br>
+        <ion-row>
+            <ion-col>
+                <ion-button (click)="register()">Sign Up</ion-button>
+            </ion-col>
+        </ion-row>
+
+        <span class="note">By signing up, you agree to ReGift's Terms & Conditions.</span>
+
+        <div class="icons">
+            <img src="assets/images/google.png" (click)="authService.googleLogin()" />
+            <img src="assets/images/yahoo.png" />
+        </div>
+
+    </form>
+
+</ion-content>
+
+<span class="login" [routerLink]="['/login']">Login</span>

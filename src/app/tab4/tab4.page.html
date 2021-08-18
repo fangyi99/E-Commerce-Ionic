@@ -1,0 +1,76 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Account</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item class="header" lines="none">
+        <ion-avatar slot="start">
+            <img src="{{img}}">
+        </ion-avatar>
+        <ion-label>Hi {{username}}!</ion-label>
+    </ion-item>
+
+    <ion-list>
+        <ion-item button>
+            <ion-icon name="checkmark" item-start></ion-icon>
+            My Purchases
+        </ion-item>
+
+        <ion-item button [routerLink]="['/favourites']">
+            <ion-icon name="heart" item-start></ion-icon>
+            My Likes
+        </ion-item>
+
+        <ion-item button [routerLink]="['/profile']">
+            <ion-icon name="person" item-start></ion-icon>
+            Account Settings
+        </ion-item>
+
+        <ion-button (click)="authService.logout()">
+            Logout
+        </ion-button>
+
+    </ion-list>
+
+</ion-content>
+
+
+
+<!--default unauthorised view-->
+<!-- <ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>Account</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item class="header" lines="none">
+        <ion-avatar slot="start">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png">
+        </ion-avatar>
+        <ion-label class="label" color="primary" [routerLink]="['/login']">Log In</ion-label>
+    </ion-item>
+
+    <ion-list>
+        <ion-item button disabled="true">
+            <ion-icon name="checkmark" item-start></ion-icon>
+            My Purchases
+        </ion-item>
+
+        <ion-item button disabled="true">
+            <ion-icon name="heart" item-start></ion-icon>
+            My Likes
+        </ion-item>
+
+        <ion-item button disabled="true">
+            <ion-icon name="person" item-start></ion-icon>
+            Profile Settings
+        </ion-item>
+
+    </ion-list>
+
+</ion-content> -->

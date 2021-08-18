@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button [routerLink]="['']">
+                <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <div class="logo2">
+            <img src="assets/images/logo.JPG">
+        </div>
+        <ion-title>
+            Log In</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="logo">
+        <img src="assets/images/logo.JPG" />
+    </div>
+    <form [formGroup]="loginForm">
+        <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <br>
+        <span class="forget" [routerLink]="['/reset-password']">Forget Password</span>
+        <br>
+
+        <ion-row>
+            <ion-col>
+                <ion-button (click)="login()">Login</ion-button>
+            </ion-col>
+        </ion-row>
+
+        <div class="icons">
+            <img src="assets/images/google.png" (click)="authService.googleLogin()" />
+            <img src="assets/images/yahoo.png" />
+        </div>
+
+    </form>
+
+</ion-content>
+
+
+<span class="register" [routerLink]="['/register']">Register</span>

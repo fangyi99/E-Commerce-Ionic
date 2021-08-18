@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button icon-only (click)="cancel()">
+                <ion-icon name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Event Details</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="eventForm">
+        <ion-item>
+            <ion-input type="text" placeholder="Title" formControlName="title"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Start</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" formControlName="startTime" [min]="minDate"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>End</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D:HH:mm" formControlName="endTime" [min]="minDate"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>All Day?</ion-label>
+            <ion-checkbox formControlName="allDay"></ion-checkbox>
+        </ion-item>
+
+        <ion-row *ngIf="eventId==null">
+            <ion-button class="new" type="submit" (click)="save()">
+                <ion-icon name="checkmark"></ion-icon>Save</ion-button>
+        </ion-row>
+
+        <ion-row *ngIf="eventId!=null">
+            <ion-button type="submit" (click)="delete()">
+                <ion-icon name="trash-outline"></ion-icon>Delete</ion-button>
+            <ion-button type="submit" (click)="save()">
+                <ion-icon name="checkmark"></ion-icon>Save</ion-button>
+        </ion-row>
+    </form>
+
+</ion-content>

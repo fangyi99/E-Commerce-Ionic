@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Cart
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-list>
+        <ion-item-sliding *ngFor="let item of cart">
+            <ion-item>
+                <ion-thumbnail slot="start">
+                    <ion-img [src]="item.image"></ion-img>
+                </ion-thumbnail>
+                <ion-grid>
+                    <ion-row>
+                        <ion-label>
+                            {{item.product}}
+                        </ion-label>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <ion-label>
+                                {{item.price}}
+                            </ion-label>
+                        </ion-col>
+                        <ion-col>
+                            <ion-row class="ion-no-padding ion-align-items-center">
+                                <ion-col>
+                                    <button (click)="minus(item.id)" fill="clear">
+                                            <ion-icon name="remove" slot="icon-only"></ion-icon>
+                                    </button>
+                                </ion-col>
+                                <ion-col>
+                                    <ion-input class="input" [value]="item.quantity"></ion-input>
+                                </ion-col>
+                                <ion-col>
+                                    <button (click)="add(item.id)" fill="clear">
+                                            <ion-icon name="add" slot="icon-only"></ion-icon>
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+            <ion-item-options side="end">
+                <ion-item-option color="danger" (click)="cartService.deleteCartItem(item)">
+                    <ion-icon name="trash-outline"></ion-icon>
+                </ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>

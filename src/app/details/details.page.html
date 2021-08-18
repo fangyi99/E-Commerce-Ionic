@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{product.name}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <img src="{{product.image}}">
+    <div class="side">
+        <ion-title>${{product.price}}</ion-title>
+        <ion-title>
+            {{product.name}}
+        </ion-title>
+    </div>
+    <ion-item-divider></ion-item-divider>
+    <p><b>Product Details</b></p>
+    <p>Stock <span>{{product.stock}}</span></p>
+    <p>Brand <span>{{product.brand}}</span></p>
+    <ion-item-divider></ion-item-divider>
+    <p>{{product.description}}</p>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="openModal()">
+            <ion-icon name="cart"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="toggleHeart()" [disabled]="!auth.isLoggedIn()">
+            <ion-icon [name]="heartType"></ion-icon>
+        </ion-fab-button>
+
+    </ion-fab>
+
+</ion-content>

@@ -1,0 +1,10 @@
+{
+  "name": "e-commerceApp",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {
+      "enabled": false
+    }
+  },
+  "type": "angular"
+}

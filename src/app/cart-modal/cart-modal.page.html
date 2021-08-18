@@ -1,0 +1,37 @@
+<ion-content>
+
+    <div class="container">
+        <ion-toolbar>
+            <ion-buttons slot="primary">
+                <ion-button (click)="closeModal()">
+                    <ion-icon slot="icon-only" name="close"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-toolbar>
+
+        <div class="header">
+            <img src="{{product.image}}">
+            <ion-title class="price">${{product.price}}</ion-title>
+        </div>
+
+        <div class="content">
+            <ion-title>Quantity</ion-title>
+
+            <div class="quantity">
+                <button (click)="minus()">
+                    <ion-icon name="remove" slot="icon-only"></ion-icon>
+                </button>
+                <ion-input class="input" [value]="quantity"></ion-input>
+                <button (click)="add()">
+                    <ion-icon name="add" slot="icon-only"></ion-icon>
+                </button>
+            </div>
+
+            <ion-row>
+                <ion-button class="add" (click)="addToCart()">Add to cart</ion-button>
+            </ion-row>
+        </div>
+
+    </div>
+
+</ion-content>
